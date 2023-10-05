@@ -1,0 +1,15 @@
+SHOW DATABASE;
+
+CREATE DATABASE tugas_p1_dbpegawai;
+USE tugas_p1_dbpegawai;
+
+
+CREATE TABLE dbpegawai( 
+    id int PRIMARY KEY AUTO_INCREMENT, 
+    nip char(5) NOT null UNIQUE, 
+    nama varchar(30) NOT null, 
+    gender ENUM('L','P') not null, 
+    umur int NOT null, 
+    berat_badan float );
+
+DESC dbpegawai;
