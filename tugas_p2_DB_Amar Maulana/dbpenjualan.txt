@@ -1,0 +1,32 @@
+CREATE DATABASE dbpenjualan;
+
+CREATE TABLE pembelian( 
+    No int PRIMARY KEY AUTO_INCREMENT, 
+    Produk_ID int NOT null, 
+    Vendor_ID int(5) NOT null, 
+    Tanggal varchar(11) NOT null, 
+    jumlah int(3) NOT null, 
+    Harga int(4) NOT null );
+
+ALTER TABLE `pembelian` CHANGE `jumlah` `Jumlah` INT(3) NOT NULL;
+
+CREATE TABLE vendor( 
+    Nomor int PRIMARY KEY, 
+    Nama varchar(30) UNIQUE, 
+    Kota Varchar(15), 
+    Kontak varchar(13) );
+
+INSERT INTO pembelian (No,Produk_ID,Vendor_ID,Tanggal,Jumlah,Harga)
+VALUES 	('1',001,0001,'01-12-2020',100,3000),
+		('2',001,0002,'20-12-2020',500,3000),
+        ('3',002,0002,'20-12-2020',250,5000),
+        ('4',001,003,'01-01-2021',200,3000),
+        ('5',003,003,'01-01-2021',4,10000);
+
+INSERT INTO vendor (Nomor,Nama,Kota,Kontak)
+VALUES 	('1','PT Barang','Bandung','081234xxx891'),
+		('2','PT Propertie','Jogja','08123xxxx7893'),
+        ('3','PT Sukses','Jakarta','081234xxx892');
+
+
+SHOW
